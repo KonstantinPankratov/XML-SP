@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weather xmlns="urn:weather-api:xml:week" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!-- Dokument obsahuje 17 unikátních elementů a 14 unikátních atributů -->
+
+    <city>Prague</city>
+    <country>CZ</country>
+    <coords lat="50.08" lon="14.41"/>
+
+    <forecasts>
+        <!--
+            Všech 7 dní bude vyplněno následovně
+            Hodnoty jsou poskytovány pomocí atributů, aby se snížil objem přenášených dat
+        -->
+
+        <day date="2024-03-28">
+            <sun rise="05:53:00" set="19:39:00"/>
+            <time from="00:00:00" to="06:00:00">
+                <temp min="8" max="12" feels_like="9" units="celsius"/>
+                <precipitation probability="0.67" value="2" units="mm" desc="rain"/>
+                <clouds value="75" units="%" desc="broken clouds"/>
+                <wind value="3" units="m/s"/>
+                <pressure value="760" units="mmHg"/>
+                <humidity value="65" units="%"/>
+                <visibility value="10000"/>
+                <uvIndex value="3"/>
+                <airCondition value="good"/>
+            </time>
+            <time from="06:00:00" to="12:00:00">
+                <temp min="14" max="17" feels_like="15" units="celsius"/>
+                <precipitation probability="0.10" value="0" units="mm" desc="no rain"/>
+                <clouds value="40" units="%" desc="scattered clouds"/>
+                <wind value="2" units="m/s"/>
+                <pressure value="762" units="mmHg"/>
+                <humidity value="55" units="%"/>
+                <visibility value="10000"/>
+                <uvIndex value="5"/>
+                <airCondition value="good"/>
+            </time>
+            <time from="12:00:00" to="18:00:00">
+                <temp min="18" max="20" feels_like="19" units="celsius"/>
+                <precipitation probability="0" value="0" units="mm" desc="no rain"/>
+                <clouds value="25" units="%" desc="few clouds"/>
+                <wind value="4" units="m/s"/>
+                <pressure value="761" units="mmHg"/>
+                <humidity value="45" units="%"/>
+                <visibility value="10000"/>
+                <uvIndex value="7"/>
+                <airCondition value="good"/>
+            </time>
+            <time from="18:00:00" to="24:00:00">
+                <temp min="15" max="17" feels_like="16" units="celsius"/>
+                <precipitation probability="0.05" value="0" units="mm" desc="no rain"/>
+                <clouds value="10" units="%" desc="clear sky"/>
+                <wind value="2" units="m/s"/>
+                <pressure value="760" units="mmHg"/>
+                <humidity value="50" units="%"/>
+                <visibility value="10000"/>
+                <uvIndex value="1"/>
+                <airCondition value="good"/>
+            </time>
+        </day>
+
+    </forecasts>
+
+</weather>
