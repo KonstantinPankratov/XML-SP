@@ -1,65 +1,371 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<weather xmlns="urn:weather-api:xml:week" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <!-- Dokument obsahuje 17 unikátních elementů a 14 unikátních atributů -->
-
-    <city>Prague</city>
-    <country>CZ</country>
-    <coords lat="50.08" lon="14.41"/>
-
-    <forecasts>
-        <!--
-            Všech 7 dní bude vyplněno následovně
-            Hodnoty jsou poskytovány pomocí atributů, aby se snížil objem přenášených dat
-        -->
-
-        <day date="2024-03-28">
-            <sun rise="05:53:00" set="19:39:00"/>
-            <time from="00:00:00" to="06:00:00">
-                <temp min="8" max="12" feels_like="9" units="celsius"/>
-                <precipitation probability="0.67" value="2" units="mm" desc="rain"/>
-                <clouds value="75" units="%" desc="broken clouds"/>
-                <wind value="3" units="m/s"/>
-                <pressure value="760" units="mmHg"/>
-                <humidity value="65" units="%"/>
-                <visibility value="10000"/>
-                <uvIndex value="3"/>
-                <airCondition value="good"/>
-            </time>
-            <time from="06:00:00" to="12:00:00">
-                <temp min="14" max="17" feels_like="15" units="celsius"/>
-                <precipitation probability="0.10" value="0" units="mm" desc="no rain"/>
-                <clouds value="40" units="%" desc="scattered clouds"/>
-                <wind value="2" units="m/s"/>
-                <pressure value="762" units="mmHg"/>
-                <humidity value="55" units="%"/>
-                <visibility value="10000"/>
-                <uvIndex value="5"/>
-                <airCondition value="good"/>
-            </time>
-            <time from="12:00:00" to="18:00:00">
-                <temp min="18" max="20" feels_like="19" units="celsius"/>
-                <precipitation probability="0" value="0" units="mm" desc="no rain"/>
-                <clouds value="25" units="%" desc="few clouds"/>
-                <wind value="4" units="m/s"/>
-                <pressure value="761" units="mmHg"/>
-                <humidity value="45" units="%"/>
-                <visibility value="10000"/>
-                <uvIndex value="7"/>
-                <airCondition value="good"/>
-            </time>
-            <time from="18:00:00" to="24:00:00">
-                <temp min="15" max="17" feels_like="16" units="celsius"/>
-                <precipitation probability="0.05" value="0" units="mm" desc="no rain"/>
-                <clouds value="10" units="%" desc="clear sky"/>
-                <wind value="2" units="m/s"/>
-                <pressure value="760" units="mmHg"/>
-                <humidity value="50" units="%"/>
-                <visibility value="10000"/>
-                <uvIndex value="1"/>
-                <airCondition value="good"/>
-            </time>
-        </day>
-
-    </forecasts>
-
+<weather xmlns="urn:pank09:weather-forecast" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <location id="CZ-PRG">
+        <city>Prague</city>
+        <country>CZ</country>
+        <coordinates>
+            <lat>50.08</lat>
+            <lon>14.41</lon>
+        </coordinates>
+        <forecasts>
+            <forecast>
+                <date>2024-03-28</date>
+                <sun>
+                    <rise>06:00:00</rise>
+                    <set>18:30:00</set>
+                </sun>
+                <moon>waxing crescent</moon>
+                <time>
+                    <from>00:00:00</from>
+                    <to>12:00:00</to>
+                    <condition>overcast clouds</condition>
+                    <temp>
+                        <min>2</min>
+                        <max>8</max>
+                    </temp>
+                    <precipitation>
+                        <probability>0.2</probability>
+                        <type>snow</type>
+                        <quantity>2</quantity>
+                    </precipitation>
+                    <clouds>90</clouds>
+                    <wind>
+                        <speed>5</speed>
+                        <direction>northwest</direction>
+                    </wind>
+                    <pressure>752</pressure>
+                    <humidity>80</humidity>
+                    <visibility>8000</visibility>
+                    <uvIndex>1</uvIndex>
+                    <airCondition>moderate</airCondition>
+                    <icon>https://cdn-icons-png.flaticon.com/512/414/414927.png</icon>
+                </time>
+                <time>
+                    <from>12:00:00</from>
+                    <to>24:00:00</to>
+                    <condition>scattered clouds</condition>
+                    <temp>
+                        <min>6</min>
+                        <max>10</max>
+                    </temp>
+                    <precipitation>
+                        <probability>0.78</probability>
+                        <type>rain</type>
+                        <quantity>5</quantity>
+                    </precipitation>
+                    <clouds>40</clouds>
+                    <wind>
+                        <speed>4</speed>
+                        <direction>east</direction>
+                    </wind>
+                    <pressure>755</pressure>
+                    <humidity>50</humidity>
+                    <visibility>15000</visibility>
+                    <uvIndex>4</uvIndex>
+                    <airCondition>good</airCondition>
+                    <icon>https://cdn-icons-png.flaticon.com/128/4503/4503050.png</icon>
+                </time>
+            </forecast>
+            <forecast>
+                <date>2024-03-29</date>
+                <sun>
+                    <rise>06:00:00</rise>
+                    <set>18:30:00</set>
+                </sun>
+                <moon>waxing crescent</moon>
+                <time>
+                    <from>00:00:00</from>
+                    <to>12:00:00</to>
+                    <condition>few clouds</condition>
+                    <temp>
+                        <min>3</min>
+                        <max>7</max>
+                    </temp>
+                    <precipitation>
+                        <probability>0.15</probability>
+                        <type>rain</type>
+                        <quantity>1</quantity>
+                    </precipitation>
+                    <clouds>20</clouds>
+                    <wind>
+                        <speed>2</speed>
+                        <direction>south</direction>
+                    </wind>
+                    <pressure>758</pressure>
+                    <humidity>60</humidity>
+                    <visibility>12000</visibility>
+                    <uvIndex>2</uvIndex>
+                    <airCondition>good</airCondition>
+                    <icon>https://cdn-icons-png.flaticon.com/512/4503/4503032.png</icon>
+                </time>
+                <time>
+                    <from>12:00:00</from>
+                    <to>24:00:00</to>
+                    <condition>broken clouds</condition>
+                    <temp>
+                        <min>8</min>
+                        <max>14</max>
+                    </temp>
+                    <precipitation>
+                        <probability>0.25</probability>
+                        <type>rain</type>
+                        <quantity>4</quantity>
+                    </precipitation>
+                    <clouds>60</clouds>
+                    <wind>
+                        <speed>6</speed>
+                        <direction>southwest</direction>
+                    </wind>
+                    <pressure>754</pressure>
+                    <humidity>75</humidity>
+                    <visibility>10000</visibility>
+                    <uvIndex>3</uvIndex>
+                    <airCondition>moderate</airCondition>
+                    <icon>https://cdn-icons-png.flaticon.com/512/414/414927.png</icon>
+                </time>
+            </forecast>
+            <forecast>
+                <date>2024-03-30</date>
+                <sun>
+                    <rise>06:00:00</rise>
+                    <set>18:30:00</set>
+                </sun>
+                <moon>waxing crescent</moon>
+                <time>
+                    <from>00:00:00</from>
+                    <to>12:00:00</to>
+                    <condition>thunderstorm</condition>
+                    <temp>
+                        <min>1</min>
+                        <max>5</max>
+                    </temp>
+                    <precipitation>
+                        <probability>0.3</probability>
+                        <type>rain</type>
+                        <quantity>8</quantity>
+                    </precipitation>
+                    <clouds>95</clouds>
+                    <wind>
+                        <speed>7</speed>
+                        <direction>northeast</direction>
+                    </wind>
+                    <pressure>749</pressure>
+                    <humidity>85</humidity>
+                    <visibility>7000</visibility>
+                    <uvIndex>1</uvIndex>
+                    <airCondition>poor</airCondition>
+                    <icon>https://cdn-icons-png.flaticon.com/512/414/414927.png</icon>
+                </time>
+                <time>
+                    <from>12:00:00</from>
+                    <to>24:00:00</to>
+                    <condition>scattered clouds</condition>
+                    <temp>
+                        <min>4</min>
+                        <max>9</max>
+                    </temp>
+                    <precipitation>
+                        <probability>0.1</probability>
+                        <type>rain</type>
+                        <quantity>1</quantity>
+                    </precipitation>
+                    <clouds>30</clouds>
+                    <wind>
+                        <speed>3</speed>
+                        <direction>east</direction>
+                    </wind>
+                    <pressure>753</pressure>
+                    <humidity>55</humidity>
+                    <visibility>15000</visibility>
+                    <uvIndex>3</uvIndex>
+                    <airCondition>good</airCondition>
+                    <icon>https://cdn-icons-png.flaticon.com/512/414/414927.png</icon>
+                </time>
+            </forecast>
+        </forecasts>
+    </location>
+    <location id="UK-LND">
+        <city>London</city>
+        <country>UK</country>
+        <coordinates>
+            <lat>51.5072</lat>
+            <lon>0.1276</lon>
+        </coordinates>
+        <forecasts>
+            <forecast>
+                <date>2024-03-28</date>
+                <sun>
+                    <rise>06:12:00</rise>
+                    <set>18:45:00</set>
+                </sun>
+                <moon>waxing crescent</moon>
+                <time>
+                    <from>00:00:00</from>
+                    <to>12:00:00</to>
+                    <condition>few clouds</condition>
+                    <temp>
+                        <min>5</min>
+                        <max>9</max>
+                    </temp>
+                    <precipitation>
+                        <probability>0.2</probability>
+                        <type>rain</type>
+                        <quantity>1</quantity>
+                    </precipitation>
+                    <clouds>20</clouds>
+                    <wind>
+                        <speed>4</speed>
+                        <direction>southwest</direction>
+                    </wind>
+                    <pressure>761</pressure>
+                    <humidity>70</humidity>
+                    <visibility>12000</visibility>
+                    <uvIndex>2</uvIndex>
+                    <airCondition>good</airCondition>
+                    <icon>https://cdn-icons-png.flaticon.com/512/4503/4503032.png</icon>
+                </time>
+                <time>
+                    <from>12:00:00</from>
+                    <to>24:00:00</to>
+                    <condition>clear sky</condition>
+                    <temp>
+                        <min>11</min>
+                        <max>16</max>
+                    </temp>
+                    <precipitation>
+                        <probability>0.05</probability>
+                        <type>rain</type>
+                        <quantity>0.5</quantity>
+                    </precipitation>
+                    <clouds>10</clouds>
+                    <wind>
+                        <speed>5</speed>
+                        <direction>south</direction>
+                    </wind>
+                    <pressure>758</pressure>
+                    <humidity>55</humidity>
+                    <visibility>20000</visibility>
+                    <uvIndex>3</uvIndex>
+                    <airCondition>excellent</airCondition>
+                    <icon>https://cdn-icons-png.flaticon.com/512/414/414927.png</icon>
+                </time>
+            </forecast>
+            <forecast>
+                <date>2024-03-29</date>
+                <sun>
+                    <rise>06:10:00</rise>
+                    <set>18:47:00</set>
+                </sun>
+                <moon>waxing crescent</moon>
+                <time>
+                    <from>00:00:00</from>
+                    <to>12:00:00</to>
+                    <condition>overcast clouds</condition>
+                    <temp>
+                        <min>6</min>
+                        <max>10</max>
+                    </temp>
+                    <precipitation>
+                        <probability>0.3</probability>
+                        <type>rain</type>
+                        <quantity>3</quantity>
+                    </precipitation>
+                    <clouds>80</clouds>
+                    <wind>
+                        <speed>6</speed>
+                        <direction>northeast</direction>
+                    </wind>
+                    <pressure>763</pressure>
+                    <humidity>85</humidity>
+                    <visibility>8000</visibility>
+                    <uvIndex>1</uvIndex>
+                    <airCondition>moderate</airCondition>
+                    <icon>https://cdn-icons-png.flaticon.com/512/414/414927.png</icon>
+                </time>
+                <time>
+                    <from>12:00:00</from>
+                    <to>24:00:00</to>
+                    <condition>scattered clouds</condition>
+                    <temp>
+                        <min>12</min>
+                        <max>17</max>
+                    </temp>
+                    <precipitation>
+                        <probability>0.1</probability>
+                        <type>rain</type>
+                        <quantity>1</quantity>
+                    </precipitation>
+                    <clouds>50</clouds>
+                    <wind>
+                        <speed>3</speed>
+                        <direction>west</direction>
+                    </wind>
+                    <pressure>760</pressure>
+                    <humidity>60</humidity>
+                    <visibility>15000</visibility>
+                    <uvIndex>4</uvIndex>
+                    <airCondition>good</airCondition>
+                    <icon>https://cdn-icons-png.flaticon.com/512/414/414927.png</icon>
+                </time>
+            </forecast>
+            <forecast>
+                <date>2024-03-30</date>
+                <sun>
+                    <rise>06:08:00</rise>
+                    <set>18:49:00</set>
+                </sun>
+                <moon>waxing crescent</moon>
+                <time>
+                    <from>00:00:00</from>
+                    <to>12:00:00</to>
+                    <condition>foggy</condition>
+                    <temp>
+                        <min>4</min>
+                        <max>8</max>
+                    </temp>
+                    <precipitation>
+                        <probability>0.75</probability>
+                        <type>rain</type>
+                        <quantity>1</quantity>
+                    </precipitation>
+                    <clouds>100</clouds>
+                    <wind>
+                        <speed>2</speed>
+                        <direction>northwest</direction>
+                    </wind>
+                    <pressure>765</pressure>
+                    <humidity>90</humidity>
+                    <visibility>500</visibility>
+                    <uvIndex>0</uvIndex>
+                    <airCondition>poor</airCondition>
+                    <icon>https://cdn-icons-png.flaticon.com/512/4503/4503050.png</icon>
+                </time>
+                <time>
+                    <from>12:00:00</from>
+                    <to>24:00:00</to>
+                    <condition>mostly cloudy</condition>
+                    <temp>
+                        <min>9</min>
+                        <max>13</max>
+                    </temp>
+                    <precipitation>
+                        <probability>0.2</probability>
+                        <type>rain</type>
+                        <quantity>5</quantity>
+                    </precipitation>
+                    <clouds>65</clouds>
+                    <wind>
+                        <speed>4</speed>
+                        <direction>southwest</direction>
+                    </wind>
+                    <pressure>762</pressure>
+                    <humidity>75</humidity>
+                    <visibility>10000</visibility>
+                    <uvIndex>3</uvIndex>
+                    <airCondition>moderate</airCondition>
+                    <icon>https://cdn-icons-png.flaticon.com/512/414/414927.png</icon>
+                </time>
+            </forecast>
+        </forecasts>
+    </location>
 </weather>
