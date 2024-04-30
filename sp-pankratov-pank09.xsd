@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="urn:pank09:weather-forecast"
+    xmlns="urn:pank09:weather-forecast"
+    xmlns:wthr="urn:pank09:weather-forecast"
+    elementFormDefault="qualified">
+    
+    <xs:element name="weather" type="weatherType"/>
+    
+    <xs:complexType name="weatherType">
+        <xs:sequence>
+            <xs:element name="location" type="locationType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="locationType">
+        <xs:sequence>
+            <xs:element name="city" type="xs:string"/>
+            <xs:element name="country" type="countryType"/>
+            <xs:element name="coordinates" type="coordinatesType"></xs:element>
+            <xs:element name="forecasts" type="forecastsType"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="id" type="locationIdType"/>
+    </xs:complexType>
+    
+    <xs:simpleType name="locationIdType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{2}-[A-Z]{3}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="countryType">
+        <xs:restriction base="xs:string">
+            <xs:length value="2"></xs:length>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="coordinatesType">
+        <xs:sequence>
+            <xs:element name="lat" type="xs:decimal"/>
+            <xs:element name="lon" type="xs:decimal"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="forecastsType">
+        <xs:sequence>
+            <xs:element name="forecast" type="forecastType" minOccurs="1" maxOccurs="7">
+                <xs:key name="uniqueTimeFrom">
+                    <xs:selector xpath="wthr:time"></xs:selector>
+                    <xs:field xpath="wthr:from"></xs:field>
+                </xs:key>
+                <xs:key name="uniqueTimeTo">
+                    <xs:selector xpath="wthr:time"></xs:selector>
+                    <xs:field xpath="wthr:to"></xs:field>
+                </xs:key>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="forecastType">
+        <xs:sequence>
+            <xs:element name="date" type="xs:date"/>
+            <xs:element name="sun" type="sunType"/>
+            <xs:element name="moon" type="moonType"/>
+            <xs:element name="time" type="timeType" minOccurs="1" maxOccurs="4"/>
+        </xs:sequence>
+        <xs:attribute name="date" type="xs:date"/>
+    </xs:complexType>
+    
+    <xs:complexType name="sunType">
+        <xs:sequence>
+            <xs:element name="rise" type="xs:time"/>
+            <xs:element name="set" type="xs:time"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="moonType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="new moon"/>
+            <xs:enumeration value="waxing crescent"/>
+            <xs:enumeration value="first quarter"/>
+            <xs:enumeration value="waxing gibbous"/>
+            <xs:enumeration value="full moon"/>
+            <xs:enumeration value="waning gibbous"/>
+            <xs:enumeration value="third quarter"/>
+            <xs:enumeration value="waning crescent"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="timeType">
+        <xs:sequence>
+            <xs:element name="from" type="xs:time"/>
+            <xs:element name="to" type="xs:time"/>
+            <xs:element name="condition" type="conditionType"/>
+            <xs:element name="temp" type="tempType"/>
+            <xs:element name="precipitation" type="precipitationType"/>
+            <xs:element name="clouds" type="percentRangeType"/>
+            <xs:element name="wind" type="windType"/>
+            <xs:element name="pressure" type="xs:integer"/>
+            <xs:element name="humidity" type="percentRangeType"/>
+            <xs:element name="visibility" type="xs:integer"/>
+            <xs:element name="uvIndex" type="uvIndexType"/>
+            <xs:element name="airCondition" type="airConditionType"/>
+            <xs:element name="icon" type="xs:anyURI"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="conditionType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="clear"/>
+            <xs:enumeration value="few clouds"/>
+            <xs:enumeration value="scattered clouds"/>
+            <xs:enumeration value="broken clouds"/>
+            <xs:enumeration value="overcast clouds"/>
+            <xs:enumeration value="thunderstorm"/>
+            <xs:enumeration value="drizzle"/>
+            <xs:enumeration value="rain"/>
+            <xs:enumeration value="snow"/>
+            <xs:enumeration value="mist"/>
+            <xs:enumeration value="smoke"/>
+            <xs:enumeration value="haze"/>
+            <xs:enumeration value="dust"/>
+            <xs:enumeration value="fog"/>
+            <xs:enumeration value="sand"/>
+            <xs:enumeration value="ash"/>
+            <xs:enumeration value="squall"/>
+            <xs:enumeration value="tornado"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="tempType">
+        <xs:sequence>
+            <xs:element name="min" type="xs:integer"/>
+            <xs:element name="max" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="precipitationType">
+        <xs:sequence>
+            <xs:element name="probability" type="twoPlacesDecimal"/>
+            <xs:element name="quantity" type="onePlaceDecimal"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="windType">
+        <xs:sequence>
+            <xs:element name="speed" type="xs:integer"/>
+            <xs:element name="direction" type="windDirectionType"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="windDirectionType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="south"/>
+            <xs:enumeration value="south-west"/>
+            <xs:enumeration value="west"/>
+            <xs:enumeration value="north-west"/>
+            <xs:enumeration value="north"/>
+            <xs:enumeration value="north-east"/>
+            <xs:enumeration value="east"/>
+            <xs:enumeration value="south-east"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="uvIndexType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="10"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="airConditionType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="bad"></xs:enumeration>
+            <xs:enumeration value="poor"></xs:enumeration>
+            <xs:enumeration value="moderate"></xs:enumeration>
+            <xs:enumeration value="good"></xs:enumeration>
+            <xs:enumeration value="excellent"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="percentRangeType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="100"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="twoPlacesDecimal">
+        <xs:restriction base="xs:decimal">
+            <xs:fractionDigits fixed="true" value="2" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="onePlaceDecimal">
+        <xs:restriction base="xs:decimal">
+            <xs:fractionDigits fixed="true" value="2" />
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

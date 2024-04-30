@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<weather xmlns="urn:pank09:weather-forecast" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<weather xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:pank09:weather-forecast sp-pankratov-pank09.xsd"
+ xmlns="urn:pank09:weather-forecast">
     <location id="CZ-PRG">
         <city>Prague</city>
         <country>CZ</country>
@@ -25,13 +27,12 @@
                     </temp>
                     <precipitation>
                         <probability>0.2</probability>
-                        <type>snow</type>
                         <quantity>2</quantity>
                     </precipitation>
                     <clouds>90</clouds>
                     <wind>
                         <speed>5</speed>
-                        <direction>northwest</direction>
+                        <direction>north-west</direction>
                     </wind>
                     <pressure>752</pressure>
                     <humidity>80</humidity>
@@ -50,7 +51,6 @@
                     </temp>
                     <precipitation>
                         <probability>0.78</probability>
-                        <type>rain</type>
                         <quantity>5</quantity>
                     </precipitation>
                     <clouds>40</clouds>
@@ -83,7 +83,6 @@
                     </temp>
                     <precipitation>
                         <probability>0.15</probability>
-                        <type>rain</type>
                         <quantity>1</quantity>
                     </precipitation>
                     <clouds>20</clouds>
@@ -108,13 +107,12 @@
                     </temp>
                     <precipitation>
                         <probability>0.25</probability>
-                        <type>rain</type>
                         <quantity>4</quantity>
                     </precipitation>
                     <clouds>60</clouds>
                     <wind>
                         <speed>6</speed>
-                        <direction>southwest</direction>
+                        <direction>south-west</direction>
                     </wind>
                     <pressure>754</pressure>
                     <humidity>75</humidity>
@@ -141,13 +139,12 @@
                     </temp>
                     <precipitation>
                         <probability>0.3</probability>
-                        <type>rain</type>
                         <quantity>8</quantity>
                     </precipitation>
                     <clouds>95</clouds>
                     <wind>
                         <speed>7</speed>
-                        <direction>northeast</direction>
+                        <direction>north-east</direction>
                     </wind>
                     <pressure>749</pressure>
                     <humidity>85</humidity>
@@ -166,7 +163,6 @@
                     </temp>
                     <precipitation>
                         <probability>0.1</probability>
-                        <type>rain</type>
                         <quantity>1</quantity>
                     </precipitation>
                     <clouds>30</clouds>
@@ -209,13 +205,12 @@
                     </temp>
                     <precipitation>
                         <probability>0.2</probability>
-                        <type>rain</type>
                         <quantity>1</quantity>
                     </precipitation>
                     <clouds>20</clouds>
                     <wind>
                         <speed>4</speed>
-                        <direction>southwest</direction>
+                        <direction>south-west</direction>
                     </wind>
                     <pressure>761</pressure>
                     <humidity>70</humidity>
@@ -227,14 +222,13 @@
                 <time>
                     <from>12:00:00</from>
                     <to>24:00:00</to>
-                    <condition>clear sky</condition>
+                    <condition>clear</condition>
                     <temp>
                         <min>11</min>
                         <max>16</max>
                     </temp>
                     <precipitation>
                         <probability>0.05</probability>
-                        <type>rain</type>
                         <quantity>0.5</quantity>
                     </precipitation>
                     <clouds>10</clouds>
@@ -267,13 +261,12 @@
                     </temp>
                     <precipitation>
                         <probability>0.3</probability>
-                        <type>rain</type>
                         <quantity>3</quantity>
                     </precipitation>
                     <clouds>80</clouds>
                     <wind>
                         <speed>6</speed>
-                        <direction>northeast</direction>
+                        <direction>north-east</direction>
                     </wind>
                     <pressure>763</pressure>
                     <humidity>85</humidity>
@@ -292,7 +285,6 @@
                     </temp>
                     <precipitation>
                         <probability>0.1</probability>
-                        <type>rain</type>
                         <quantity>1</quantity>
                     </precipitation>
                     <clouds>50</clouds>
@@ -318,45 +310,43 @@
                 <time>
                     <from>00:00:00</from>
                     <to>12:00:00</to>
-                    <condition>foggy</condition>
+                    <condition>fog</condition>
                     <temp>
                         <min>4</min>
                         <max>8</max>
                     </temp>
                     <precipitation>
                         <probability>0.75</probability>
-                        <type>rain</type>
                         <quantity>1</quantity>
                     </precipitation>
                     <clouds>100</clouds>
                     <wind>
                         <speed>2</speed>
-                        <direction>northwest</direction>
+                        <direction>north-west</direction>
                     </wind>
                     <pressure>765</pressure>
                     <humidity>90</humidity>
                     <visibility>500</visibility>
-                    <uvIndex>0</uvIndex>
+                    <uvIndex>1</uvIndex>
                     <airCondition>poor</airCondition>
                     <icon>https://cdn-icons-png.flaticon.com/512/4503/4503050.png</icon>
                 </time>
                 <time>
                     <from>12:00:00</from>
                     <to>24:00:00</to>
-                    <condition>mostly cloudy</condition>
+                    <condition>overcast clouds</condition>
                     <temp>
                         <min>9</min>
                         <max>13</max>
                     </temp>
                     <precipitation>
                         <probability>0.2</probability>
-                        <type>rain</type>
                         <quantity>5</quantity>
                     </precipitation>
                     <clouds>65</clouds>
                     <wind>
                         <speed>4</speed>
-                        <direction>southwest</direction>
+                        <direction>south-west</direction>
                     </wind>
                     <pressure>762</pressure>
                     <humidity>75</humidity>
