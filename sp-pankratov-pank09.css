@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+
+.location {
+    margin-bottom: 50px;
+}
+
+.location .header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.badge {
+    font-size: 0.75rem;
+    padding: 5px 8px;
+    border-radius: 5px;
+    color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.forecasts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.forecasts .forecast {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.forecasts .forecast .time-wrapper {
+    display: flex;
+    margin-top: 10px;
+}
+
+.forecasts .forecast .time-wrapper .time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.forecasts .forecast .time-wrapper .time:first-child {
+    background: rgba(11, 127, 171, 0.3);
+    border-radius: 10px 0 0 10px;
+}
+
+.forecasts .forecast .time-wrapper .time:last-child {
+    background: rgba(4, 59, 92, 0.3);
+    border-radius: 0 10px 10px 0;
+}
+
+.forecasts .forecast .time-wrapper .time:first-child:before,
+.forecasts .forecast .time-wrapper .time:last-child:before {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+}
+
+.forecasts .forecast .time-wrapper .time:first-child:before {
+    content: 'Day';
+}
+
+.forecasts .forecast .time-wrapper .time:last-child:before {
+    content: 'Night';
+}
+
+.forecasts .forecast .time-wrapper .time .condition {
+    display: block;
+    margin: 10px 0;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.forecasts .forecast .time-wrapper .time .temp .min {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.forecasts .forecast .time-wrapper .time .temp .max {
+    font-size: 1.25rem;
+}
+
+.forecasts .forecast .time-wrapper .time ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+.forecasts .forecast .time-wrapper .time ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-top: 5px;
+    font-size: 0.85rem;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.forecasts .forecast .time-wrapper .time ul li span {
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+}
