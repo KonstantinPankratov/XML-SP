@@ -152,7 +152,7 @@
                     <visibility>7000</visibility>
                     <uvIndex>1</uvIndex>
                     <airCondition>poor</airCondition>
-                    <icon>https://cdn-icons-png.flaticon.com/512/414/414927.png</icon>
+                    <icon>https://cdn-icons-png.flaticon.com/512/4503/4503026.png</icon>
                 </time>
                 <time>
                     <from>12:00:00</from>
@@ -311,7 +311,7 @@
                 <time>
                     <from>00:00:00</from>
                     <to>12:00:00</to>
-                    <condition>fog</condition>
+                    <condition>rain</condition>
                     <temp>
                         <min>4</min>
                         <max>8</max>
@@ -335,7 +335,7 @@
                 <time>
                     <from>12:00:00</from>
                     <to>24:00:00</to>
-                    <condition>overcast clouds</condition>
+                    <condition>fog</condition>
                     <temp>
                         <min>9</min>
                         <max>13</max>
