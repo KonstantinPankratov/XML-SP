@@ -41,6 +41,7 @@ body {
 
 .forecasts .forecast .time-wrapper .time {
     display: flex;
+    width: 225px;
     flex-direction: column;
     align-items: center;
     padding: 10px;
