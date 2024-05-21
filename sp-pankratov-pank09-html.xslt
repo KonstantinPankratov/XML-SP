@@ -6,8 +6,8 @@
     <xsl:output method="html" version="5"/>
     <xsl:output method="html" version="5" name="html5"/>
 
-    <xsl:param name="site-name">Weather Forecast</xsl:param>
-    <xsl:param name="site-styles">sp-pankratov-pank09.css</xsl:param>
+    <xsl:variable name="site-name">Weather Forecast</xsl:variable>
+    <xsl:variable name="site-styles">sp-pankratov-pank09.css</xsl:variable>
 
     <xsl:template match="/">
         <html lang="en">
