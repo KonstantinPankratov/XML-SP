@@ -21,7 +21,10 @@
                 <h1>
                     <xsl:value-of select="$site-name"/>
                 </h1>
-                <xsl:apply-templates/>
+                <xsl:for-each-group select="wthr:weather/wthr:location" group-by="wthr:country">
+                    <xsl:sort select="wthr:country"/>
+                    <xsl:apply-templates select="current-group()"/>
+                </xsl:for-each-group>
             </body>
         </html>
     </xsl:template>
