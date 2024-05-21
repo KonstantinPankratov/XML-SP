@@ -7,7 +7,7 @@
     <xsl:output method="html" version="5" name="html5"/>
 
     <xsl:variable name="site-name">Weather Forecast</xsl:variable>
-    <xsl:variable name="site-styles">sp-pankratov-pank09.css</xsl:variable>
+    <xsl:variable name="site-styles">sp-pankratov-pank09-html.css</xsl:variable>
 
     <xsl:template match="/">
         <html lang="en">
