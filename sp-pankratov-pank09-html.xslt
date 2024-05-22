@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wthr="urn:pank09:weather-forecast"
-    exclude-result-prefixes="xs" version="2.0">
+<xsl:stylesheet
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:wthr="urn:pank09:weather-forecast"
+    xmlns:wthr-fn="urn:pank09:weather-functions"
+    exclude-result-prefixes="xs wthr wthr-fn"
+    version="2.0">
+    
+    <xsl:include href="sp-pankratov-pank09-functions.xslt"/>
 
     <xsl:output method="html" version="5"/>
     <xsl:output method="html" version="5" name="html5"/>
@@ -47,9 +53,9 @@
                 <section class="location">
                     <div class="header">
                         <h2>
-                            <xsl:value-of select="format-date(wthr:date, '[MNn] [D]')"/>,
-                                <xsl:value-of select="$location/wthr:city"/>, <xsl:value-of
-                                select="$location/wthr:country"/>
+                            <xsl:value-of select="wthr-fn:formatDate(wthr:date, false())"/>,
+                            <xsl:value-of select="$location/wthr:city"/>,
+                            <xsl:value-of select="$location/wthr:country"/>
                         </h2>
                         <xsl:apply-templates select="$location/wthr:coordinates"/>
                     </div>
@@ -90,7 +96,7 @@
     <xsl:template match="wthr:forecast">
         <div class="forecast" onclick="window.location.href = '{generate-id()}.html';">
             <a href="{generate-id()}.html" class="date">
-                <xsl:value-of select="format-date(wthr:date, '[MNn] [D]')"/>
+                <xsl:value-of select="wthr-fn:formatDate(wthr:date, false())"/>
             </a>
             <div class="time-wrapper">
                 <xsl:apply-templates select="wthr:time"/>
