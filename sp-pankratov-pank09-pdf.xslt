@@ -82,7 +82,7 @@
     </xsl:template>
     
     <xsl:template match="wthr:forecast">
-        <fo:block id="{generate-id()}">
+        <fo:block id="{generate-id()}" keep-together.within-page="always">
             <fo:block font-weight="600" margin-bottom="2mm" background-color="black" color="white" padding="2mm" text-align="center">
                 <xsl:value-of select="wthr-fn:formatDate(wthr:date, false())"/>
             </fo:block>
