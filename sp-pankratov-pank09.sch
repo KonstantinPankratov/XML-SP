@@ -18,23 +18,38 @@
     <sch:pattern>
         <sch:title>Date and time consistency check</sch:title>
         
-        <!--<sch:rule context="wthr:date">
+        <sch:rule context="wthr:date">
             <sch:assert test="text() &gt; current-date()">
                 The date must be a future date.
                 (Location: <sch:value-of select="../../../@id"/> Date: <sch:value-of select="text()"/>)
             </sch:assert>
-        </sch:rule>-->
+        </sch:rule>
         
         <sch:rule context="wthr:forecasts/wthr:forecast[position() > 1]">
-            <sch:assert test="wthr:date &gt; preceding-sibling::wthr:forecast[1]/wthr:date">
-                Each following date must be larger than the previous date.
+            <sch:let name="currentDate" value="xs:date(wthr:date)"/>
+            <sch:let name="previousDate" value="xs:date(preceding-sibling::wthr:forecast[1]/wthr:date)"/>
+            <sch:let name="expectedDate" value="$previousDate + xs:dayTimeDuration('P1D')"/>
+            <sch:assert test="not(exists($previousDate)) or $currentDate = $expectedDate" >
+                Each date must be one day ahead than the previous date.
                 (Location: <sch:value-of select="../../@id"/> Date: <sch:value-of select="wthr:date"/>)
             </sch:assert>
         </sch:rule>
         
         <sch:rule context="wthr:forecast/wthr:time[position() > 1]">
-            <sch:assert test="wthr:from &gt; preceding-sibling::wthr:time[1]/wthr:from and wthr:from &gt;= preceding-sibling::wthr:time[1]/wthr:to">
-                The start time (<sch:value-of select="wthr:from"/>) must be greater than or equal to the previous start (<sch:value-of select="preceding-sibling::wthr:time[1]/wthr:from"/>) and end (<sch:value-of select="preceding-sibling::wthr:time[1]/wthr:to"/>) time.
+            <sch:let name="currentFrom" value="xs:time(wthr:from)"/>
+            <sch:let name="currentTo" value="xs:time(wthr:to)"/>
+            <sch:let name="previousFrom" value="xs:time(preceding-sibling::wthr:time[1]/wthr:from)"/>
+            <sch:let name="previousTo" value="xs:time(preceding-sibling::wthr:time[1]/wthr:to)"/>
+            <sch:assert test="
+                not(exists($previousFrom)) or not(exists($previousTo)) or
+                $currentFrom = $previousTo">
+                The start time (<sch:value-of select="$currentFrom"/>) must equal to the previous end time (<sch:value-of select="$previousTo"/>).
+                (Location: <sch:value-of select="../../../@id"/> Date: <sch:value-of select="../wthr:date"/>)
+            </sch:assert>
+            
+            <sch:assert test="not(exists($previousFrom)) or not(exists($previousTo)) or 
+                $previousFrom &lt; $currentFrom">
+                The start time (<sch:value-of select="$currentFrom"/>) must be greater than the previous start time (<sch:value-of select="$previousFrom"/>).
                 (Location: <sch:value-of select="../../../@id"/> Date: <sch:value-of select="../wthr:date"/>)
             </sch:assert>
         </sch:rule>
