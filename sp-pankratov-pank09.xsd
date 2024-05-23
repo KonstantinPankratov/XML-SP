@@ -32,7 +32,7 @@
     
     <xs:simpleType name="countryType">
         <xs:restriction base="xs:string">
-            <xs:length value="2"></xs:length>
+            <xs:pattern value="[A-Z]{2}"></xs:pattern>
         </xs:restriction>
     </xs:simpleType>
     
@@ -45,7 +45,7 @@
     
     <xs:complexType name="forecastsType">
         <xs:sequence>
-            <xs:element name="forecast" type="forecastType" minOccurs="1" maxOccurs="7">
+            <xs:element name="forecast" type="forecastType" maxOccurs="7">
                 <xs:key name="uniqueTimeFrom">
                     <xs:selector xpath="wthr:time"></xs:selector>
                     <xs:field xpath="wthr:from"></xs:field>
@@ -63,7 +63,7 @@
             <xs:element name="date" type="xs:date"/>
             <xs:element name="sun" type="sunType"/>
             <xs:element name="moon" type="moonType"/>
-            <xs:element name="time" type="timeType" minOccurs="1" maxOccurs="4"/>
+            <xs:element name="time" type="timeType" minOccurs="1" maxOccurs="2"/>
         </xs:sequence>
         <xs:attribute name="date" type="xs:date"/>
     </xs:complexType>
